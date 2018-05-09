@@ -55,7 +55,7 @@ int main(int argc,char*argv[])
 Mat image = imread("QR_code.png");
 ```
 
-<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr4g02v8l0j30cs0csmxg.jpg" width="200"/>{:height="700px" width="400px"}
+<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr4g02v8l0j30cs0csmxg.jpg" width="200"/>
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fr54yf0252j30ni06aq3b.jpg)
 
