@@ -147,6 +147,8 @@ int main(int argc, char *argv[]) {
     //求最小包围矩形
     RotatedRect rectPoint = minAreaRect(contours_all[0]);
 
+    Rect myRect = boundingRect(contours_all[0]);
+
     //将rectPoint变量中存储的坐标值放到 fourPoint的数组中
     rectPoint.points(fourPoint2f);
 
@@ -157,6 +159,12 @@ int main(int argc, char *argv[]) {
 
     namedWindow("Src_all");
     imshow("Src_all", src_all);
+
+    char resultFileNameSring[100];
+    sprintf(resultFileNameSring, "QRCode_Locate_result.png");
+
+    Mat resultImage = Mat(src_all, myRect);
+    imwrite(resultFileNameSring, resultImage);
 
     //框出二维码后，就可以提取出二维码，然后使用解码库zxing，解出码的信息。
     //或者研究二维码的排布规则，自己写解码部分
