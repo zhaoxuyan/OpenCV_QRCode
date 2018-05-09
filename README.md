@@ -55,7 +55,7 @@ int main(int argc,char*argv[])
 Mat image = imread("QR_code.png");
 ```
 
-<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr4g02v8l0j30cs0csmxg.jpg" width="200"/>
+<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr4g02v8l0j30cs0csmxg.jpg" width="200"/>{:height="700px" width="400px"}
 
 ![](https://ws1.sinaimg.cn/large/006tKfTcgy1fr54yf0252j30ni06aq3b.jpg)
 
@@ -237,14 +237,14 @@ int main(int argc, char *argv[]) {
 
 - 结果
 
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fr550bmfp4j314o16iguv.jpg){:width="400px"}
+<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr550bmfp4j314o16iguv.jpg" width="400px"/>
 
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fr5511yemvj312y16m76l.jpg){:width="400px"}
+<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr5511yemvj312y16m76l.jpg" width="400px"/>
 
-![](https://ws1.sinaimg.cn/large/006tKfTcgy1fr551pwqa6j314o1760vs.jpg){:width="400px"}
+<img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fr551pwqa6j314o1760vs.jpg" width="400px"/>
 
-![image-20180509155237646](/var/folders/pz/8hdd81_959q73c1y_m3gpm6c0000gn/T/abnerworks.Typora/image-20180509155237646.png){:width="400px"}
+<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fr55d0i93lj314i13wmyi.jpg" width="400px"/>
 
-![](https://ws1.sinaimg.cn/large/006tKfTcgy1fr552o35aoj314o14mab8.jpg){:width="400px"}
+<img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fr552o35aoj314o14mab8.jpg" width="400px"/>
 
-![](https://ws4.sinaimg.cn/large/006tKfTcgy1fr5532eoxvj314s16swom.jpg){:width="400px"}
+<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr5532eoxvj314s16swom.jpg" width="400px"/>
