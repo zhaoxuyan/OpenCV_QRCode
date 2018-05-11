@@ -299,10 +299,17 @@ int main(int argc, char *argv[]) {
 
 ### 4. 总结
 
-应该是OpenCV的第四个实验了，环境配置已经不再是问题（包括这次的Zbar）第1问和第2问，使用OpenCV+Zbar组合，参考博客步骤，容易的识别图片中的二维码，特别是标准的二维码，这里标准指的是二维码成像清晰，图片中二维码的空间占比在40%~100%之间，这样标准的图片，Zbar识别起来很容易，不需要Opencv额外的处理。
+应该是OpenCV的第四个实验了，环境配置已经不再是问题（包括这次的Zbar）。
 
-### 5. 参考
+第1问和第2问，使用OpenCV+Zbar组合，参考博客[1]步骤，很容易的识别了图片中的二维码（标准的二维码：这里标准指的是二维码成像清晰，图片中二维码的空间占比在40%~100%之间）这样标准的图片，Zbar识别起来很容易，不需要Opencv额外的处理。
 
-https://blog.csdn.net/nick123chao/article/details/77573675
+第3问是非标准QR二维码图片（见QRCode_locate.png），参考[2]首先使用OpenCV对其定位，框出图片中的二维码，再将其裁剪成标准二维码保存下来（见QRCode_Locate_result.png）。最后同第1，2问的方法识别出结果。
 
-https://blog.csdn.net/dcrmg/article/details/52132313
+总的来说这次实验比较简单，使用OpenCV更加熟练了。
+
+### 5. 参考文档
+
+[1] https://blog.csdn.net/dcrmg/article/details/52132313
+
+[2] https://blog.csdn.net/nick123chao/article/details/77573675
+

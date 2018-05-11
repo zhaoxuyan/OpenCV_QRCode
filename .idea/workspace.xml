@@ -11,20 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30877815-5114-4305-b894-811827df2de5" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/QR_code_locate.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/QRCode_Locate.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/QRCode_Locate.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/main.cpp.o" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/main.cpp.o" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/QRCode_Locate_result.png" afterPath="$PROJECT_DIR$/cmake-build-debug/QRCode_Locate_result.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/openCV_QRCode" afterPath="$PROJECT_DIR$/cmake-build-debug/openCV_QRCode" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/QRCode_Locate.cpp" afterPath="$PROJECT_DIR$/QRCode_Locate.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/CXX.includecache" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/depend.internal" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/OpenCV_QRCode.dir/depend.make" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
-    </list>
+    <list default="true" id="30877815-5114-4305-b894-811827df2de5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -174,12 +161,12 @@
       <workItem from="1525852053966" duration="2618000" />
       <workItem from="1526048458495" duration="1699000" />
       <workItem from="1526053204740" duration="483000" />
-      <workItem from="1526053767495" duration="318000" />
+      <workItem from="1526053767495" duration="498000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10861000" />
+    <option name="totallyTimeSpent" value="11041000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
