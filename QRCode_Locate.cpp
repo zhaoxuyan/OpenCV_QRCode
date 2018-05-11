@@ -1,7 +1,9 @@
 #include <opencv2/opencv.hpp>
+#include <zbar.h>
 
-using namespace cv;
 using namespace std;
+using namespace zbar;  //添加zbar名称空间
+using namespace cv;
 
 
 Mat src;
@@ -22,9 +24,34 @@ Point Center_cal(vector<vector<Point> > contours, int i) {
     return point1;
 }
 
-
+void QRCode_Recognize(String s){
+    ImageScanner scanner;
+    scanner.set_config(ZBAR_NONE, ZBAR_CFG_ENABLE, 1);
+    Mat image = imread(s);
+    Mat imageGray;
+    cvtColor(image,imageGray,CV_RGB2GRAY);
+    int width = imageGray.cols;
+    int height = imageGray.rows;
+    auto *raw = imageGray.data;
+    Image imageZbar(static_cast<unsigned int>(width), static_cast<unsigned int>(height), "Y800", raw,
+                    static_cast<unsigned long>(width * height));
+    scanner.scan(imageZbar); //扫描条码
+    Image::SymbolIterator symbol = imageZbar.symbol_begin();
+    if(imageZbar.symbol_begin()==imageZbar.symbol_end())
+    {
+        cout<<"查询条码失败，请检查图片！"<<endl;
+    }
+    for(;symbol != imageZbar.symbol_end();++symbol)
+    {
+        cout<<"类型："<<endl<<symbol->get_type_name()<<endl<<endl;
+        cout<<"条码："<<endl<<symbol->get_data()<<endl<<endl;
+    }
+    imshow("Source Image",image);
+    waitKey();
+    imageZbar.set_data(nullptr,0);
+}
 int main(int argc, char *argv[]) {
-    src = imread("QR_code_locate.png", 1);
+    src = imread("QRCode_locate.png", 1);
     Mat src_all = src.clone();
 
 
@@ -154,7 +181,7 @@ int main(int argc, char *argv[]) {
 
 
     for (int i = 0; i < 4; i++) {
-        line(src_all, fourPoint2f[i % 4], fourPoint2f[(i + 1) % 4], Scalar(20, 21, 237), 3);
+        line(src_all, fourPoint2f[i % 4], fourPoint2f[(i + 1) % 4], Scalar(20, 21, 237), 1);
     }
 
     namedWindow("Src_all");
@@ -168,6 +195,7 @@ int main(int argc, char *argv[]) {
 
     //框出二维码后，就可以提取出二维码，然后使用解码库zxing，解出码的信息。
     //或者研究二维码的排布规则，自己写解码部分
+    QRCode_Recognize(resultFileNameSring);
 
     waitKey(0);
     return (0);

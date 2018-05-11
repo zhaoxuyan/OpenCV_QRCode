@@ -1,3 +1,5 @@
+
+
 # 第10周上机实验的任务如下：
 
 ### 1. 利用opencv和Zbar（或者Zxing）对标准的条形码图片（即没有多余背景干扰，且图片没有倾斜）进行解码，将解码信息显示出来，并与原始信息对比。
@@ -65,9 +67,11 @@ Mat image = imread("QR_code.png");
 
 ```c++
 #include <opencv2/opencv.hpp>
+#include <zbar.h>
 
-using namespace cv;
 using namespace std;
+using namespace zbar;  //添加zbar名称空间
+using namespace cv;
 
 
 Mat src;
@@ -88,9 +92,34 @@ Point Center_cal(vector<vector<Point> > contours, int i) {
     return point1;
 }
 
-
+void QRCode_Recognize(String s){
+    ImageScanner scanner;
+    scanner.set_config(ZBAR_NONE, ZBAR_CFG_ENABLE, 1);
+    Mat image = imread(s);
+    Mat imageGray;
+    cvtColor(image,imageGray,CV_RGB2GRAY);
+    int width = imageGray.cols;
+    int height = imageGray.rows;
+    auto *raw = imageGray.data;
+    Image imageZbar(static_cast<unsigned int>(width), static_cast<unsigned int>(height), "Y800", raw,
+                    static_cast<unsigned long>(width * height));
+    scanner.scan(imageZbar); //扫描条码
+    Image::SymbolIterator symbol = imageZbar.symbol_begin();
+    if(imageZbar.symbol_begin()==imageZbar.symbol_end())
+    {
+        cout<<"查询条码失败，请检查图片！"<<endl;
+    }
+    for(;symbol != imageZbar.symbol_end();++symbol)
+    {
+        cout<<"类型："<<endl<<symbol->get_type_name()<<endl<<endl;
+        cout<<"条码："<<endl<<symbol->get_data()<<endl<<endl;
+    }
+    imshow("Source Image",image);
+    waitKey();
+    imageZbar.set_data(nullptr,0);
+}
 int main(int argc, char *argv[]) {
-    src = imread("QR_code_locate.png", 1);
+    src = imread("QRCode_locate.png", 1);
     Mat src_all = src.clone();
 
 
@@ -213,19 +242,28 @@ int main(int argc, char *argv[]) {
     //求最小包围矩形
     RotatedRect rectPoint = minAreaRect(contours_all[0]);
 
+    Rect myRect = boundingRect(contours_all[0]);
+
     //将rectPoint变量中存储的坐标值放到 fourPoint的数组中
     rectPoint.points(fourPoint2f);
 
 
     for (int i = 0; i < 4; i++) {
-        line(src_all, fourPoint2f[i % 4], fourPoint2f[(i + 1) % 4], Scalar(20, 21, 237), 3);
+        line(src_all, fourPoint2f[i % 4], fourPoint2f[(i + 1) % 4], Scalar(20, 21, 237), 1);
     }
 
     namedWindow("Src_all");
     imshow("Src_all", src_all);
 
+    char resultFileNameSring[100];
+    sprintf(resultFileNameSring, "QRCode_Locate_result.png");
+
+    Mat resultImage = Mat(src_all, myRect);
+    imwrite(resultFileNameSring, resultImage);
+
     //框出二维码后，就可以提取出二维码，然后使用解码库zxing，解出码的信息。
     //或者研究二维码的排布规则，自己写解码部分
+    QRCode_Recognize(resultFileNameSring);
 
     waitKey(0);
     return (0);
@@ -235,7 +273,7 @@ int main(int argc, char *argv[]) {
 
 
 
-- 结果
+- 定位
 
 <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr550bmfp4j314o16iguv.jpg" width="400px"/>
 
@@ -248,3 +286,23 @@ int main(int argc, char *argv[]) {
 <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fr552o35aoj314o14mab8.jpg" width="400px"/>
 
 <img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fr5532eoxvj314s16swom.jpg" width="400px"/>
+
+- 裁剪
+
+<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fr7tnyiea4j30uo0nq0vo.jpg" width="400px"/>
+
+- 识别结果
+
+![](https://ws2.sinaimg.cn/large/006tKfTcgy1fr7tmrh9czj319a0660tp.jpg)
+
+
+
+### 4. 总结
+
+应该是OpenCV的第四个实验了，环境配置已经不再是问题（包括这次的Zbar）第1问和第2问，使用OpenCV+Zbar组合，参考博客步骤，容易的识别图片中的二维码，特别是标准的二维码，这里标准指的是二维码成像清晰，图片中二维码的空间占比在40%~100%之间，这样标准的图片，Zbar识别起来很容易，不需要Opencv额外的处理。
+
+### 5. 参考
+
+https://blog.csdn.net/nick123chao/article/details/77573675
+
+https://blog.csdn.net/dcrmg/article/details/52132313

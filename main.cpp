@@ -1,15 +1,15 @@
-#include <opencv2/opencv.hpp>
-#include <zbar.h>
-
-using namespace std;
-using namespace zbar;  //添加zbar名称空间
-using namespace cv;
-
+//#include <opencv2/opencv.hpp>
+//#include <zbar.h>
+//
+//using namespace std;
+//using namespace zbar;  //添加zbar名称空间
+//using namespace cv;
+//
 //int main(int argc,char*argv[])
 //{
 //    ImageScanner scanner;
 //    scanner.set_config(ZBAR_NONE, ZBAR_CFG_ENABLE, 1);
-//    Mat image = imread("QR_code.png");
+//    Mat image = imread("QRCode_Locate_result.png");
 //    Mat imageGray;
 //    cvtColor(image,imageGray,CV_RGB2GRAY);
 //    int width = imageGray.cols;

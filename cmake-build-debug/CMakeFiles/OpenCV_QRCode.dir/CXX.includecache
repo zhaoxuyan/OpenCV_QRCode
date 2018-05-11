@@ -9,12 +9,10 @@
 /Users/zhaoxuyan/CLionProjects/OpenCV_QRCode/QRCode_Locate.cpp
 opencv2/opencv.hpp
 -
-
-/Users/zhaoxuyan/CLionProjects/OpenCV_QRCode/main.cpp
-opencv2/opencv.hpp
--
 zbar.h
 -
+
+/Users/zhaoxuyan/CLionProjects/OpenCV_QRCode/main.cpp
 
 /Users/zhaoxuyan/anaconda/include/opencv/cxcore.h
 opencv2/core/core_c.h
