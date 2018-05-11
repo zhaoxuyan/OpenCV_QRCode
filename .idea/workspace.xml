@@ -45,7 +45,7 @@
       <file leaf-file-name="QRCode_Locate.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/QRCode_Locate.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="800">
+            <state relative-caret-position="2275">
               <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
@@ -161,12 +161,12 @@
       <workItem from="1525852053966" duration="2618000" />
       <workItem from="1526048458495" duration="1699000" />
       <workItem from="1526053204740" duration="483000" />
-      <workItem from="1526053767495" duration="498000" />
+      <workItem from="1526053767495" duration="552000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11041000" />
+    <option name="totallyTimeSpent" value="11095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -377,7 +377,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/QRCode_Locate.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="800">
+        <state relative-caret-position="2275">
           <caret line="181" column="0" lean-forward="false" selection-start-line="181" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
